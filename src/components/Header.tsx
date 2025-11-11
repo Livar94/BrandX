@@ -59,7 +59,7 @@ export default function Header() {
   return (
     <header
       className={`
-        fixed inset-x-0 top-0 z-[1000] h-28
+        fixed inset-x-0 top-0 z-1000 h-28
         border-b border-white/10
         bg-[#060010] md:bg-[rgba(9,11,17,0.55)]
         backdrop-blur-md
@@ -161,7 +161,7 @@ export default function Header() {
             </li>
 
             {/* Kundcase */}
-            <li className="list-none">
+            {/* <li className="list-none">
               <Link
                 href="/kundcase"
                 prefetch
@@ -184,7 +184,7 @@ export default function Header() {
                 />
                 <span className={`relative bg-clip-text ${isKundcase ? "text-white" : ""}`}>Kundcase</span>
               </Link>
-            </li>
+            </li> */}
 
             {/* Tjänster */}
             <li className="list-none">

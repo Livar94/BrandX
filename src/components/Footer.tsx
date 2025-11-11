@@ -9,9 +9,7 @@ export default function Footer() {
 
   const nav = [
     { href: "/", label: "Hem", match: (p: string) => p === "/" },
-    { href: "/kundcase", label: "Kundcase", match: (p: string) => p.startsWith("/kundcase") },
     { href: "/services", label: "Tjänster", match: (p: string) => p.startsWith("/services") },
-    { href: "/gallery", label: "Galleri", match: (p: string) => p.startsWith("/gallery") },
     { href: "/contact", label: "Kontakta Oss", match: (p: string) => p.startsWith("/contact") },
   ];
 

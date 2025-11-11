@@ -184,77 +184,172 @@ export default function Home() {
   </div>
 
   {/* --- Innehåll ovanpå --- */}
-  <div
-    id="home"
-    suppressHydrationWarning
-    className="z-10 flex min-h-[1000px] w-full items-center justify-center px-6 py-20"
-  >
-    {/* Flex-layout: vänster (TextType) + höger (beskrivning) */}
-    <div className="flex w-full max-w-6xl flex-col items-center gap-12 md:flex-row md:items-center md:justify-between">
-      {/* Vänster: Texttypning */}
-      <div className="flex-1 flex items-center justify-center md:justify-start">
-        <h1
-          className="
-            font-bold leading-tight tracking-tight
-            text-transparent bg-clip-text
-            text-3xl sm:text-4xl md:text-5xl lg:text-6xl
-            max-w-[20ch] text-center md:text-left
-          "
-        >
-          <TextTypeClient
-            className="
-              inline-block align-top 
-              [text-shadow:0_2px_18px_rgba(255,255,255,0.15)]
-            "
-            text={[
-              'Välkommen till BrandX',
-              'där idéer blir upplevelser och detaljer gör skillnad',
-              'Grafisk design, Trycktjänster, Grafisk installation',
-            ]}
-            typingSpeed={150}
-            pauseDuration={1500}
-            showCursor
-            cursorCharacter="|"
-            textColors={['white', 'white', 'white']}
-          />
-        </h1>
+<div
+  id="home"
+  suppressHydrationWarning
+  className="z-10 flex min-h-screen w-full items-center justify-center px-6 py-20"
+>
+  {/* Centrerat innehåll */}
+  <div className="flex flex-col items-center justify-center text-center max-w-4xl">
+    <h1
+      className="
+        font-bold leading-tight tracking-tight
+        text-transparent bg-clip-text
+        text-3xl sm:text-4xl md:text-5xl lg:text-6xl
+        [text-shadow:0_2px_18px_rgba(255,255,255,0.15)]
+      "
+    >
+      <TextTypeClient
+        className="inline-block align-top"
+        text={[
+          'Välkommen till BrandX',
+          'där idéer blir upplevelser och detaljer gör skillnad',
+          'Grafisk design, Trycktjänster, Grafisk installation',
+        ]}
+        typingSpeed={150}
+        pauseDuration={1500}
+        showCursor
+        cursorCharacter="|"
+        textColors={['white', 'white', 'white']}
+      />
+    </h1>
+  </div>
+</div>
+
+      </section>
+
+<section className="relative py-24 bg-gradient-to-br from-white via-gray-50 to-gray-100 overflow-hidden">
+  {/* Dekorativ bakgrundsglow */}
+  <div className="absolute inset-0 -z-10">
+    <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-orange-400/10 rounded-full blur-3xl" />
+    <div className="absolute bottom-[-120px] right-[-120px] w-[500px] h-[500px] bg-pink-400/10 rounded-full blur-3xl" />
+  </div>
+
+  {/* Innehållsgrid */}
+  <div className="relative mx-auto max-w-6xl px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+    {/* Text till vänster */}
+    <div className="text-center md:text-left text-gray-800">
+      <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8 leading-tight">
+        Kreativitet som syns – <span className="text-orange-500">BrandX</span>
+      </h2>
+
+      <p className="text-lg md:text-xl leading-relaxed text-gray-700">
+        På <span className="font-semibold text-black">BrandX</span> förenar vi design, innovation och precision för att
+        skapa visuella uttryck som väcker uppmärksamhet och bygger förtroende. Från grafisk design och tryck till
+        montering och helhetslösningar – vi hjälper företag att synas med stil och kommunicera sitt varumärke på ett
+        modernt och minnesvärt sätt.
+      </p>
+
+      <p className="mt-6 text-base md:text-lg text-gray-600 leading-relaxed">
+        Vi tror på kraften i detaljer och på att varje projekt berättar en historia. Vårt mål är att kombinera estetik
+        med funktionalitet – där varje färg, form och yta bidrar till helheten. Oavsett om det handlar om en fasadskylt,
+        fordonsdekor eller en helt ny visuell profil, levererar vi resultat som sticker ut och håller över tid.
+      </p>
+
+      <div className="mt-10 flex items-center justify-center md:justify-start gap-4">
+        <span className="h-1 w-10 rounded-full bg-linear-to-r from-orange-400 to-pink-500" />
+        <span className="uppercase text-xs md:text-sm tracking-[0.25em] text-gray-500 font-medium">
+          Design · Tryck · Montering
+        </span>
+        <span className="h-1 w-10 rounded-full bg-linear-to-r from-pink-500 to-orange-400" />
       </div>
+    </div>
 
-      {/* Höger: Företagsbeskrivning */}
-      <div className="flex-1 mx-auto max-w-xl text-center md:text-left text-white">
-        {/* Bakgrundsglow för stil */}
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-br from-orange-500/10 via-white/5 to-transparent blur-3xl" />
-
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-6">
-          Kreativitet som syns – <span className="text-orange-400">BrandX</span>
-        </h2>
-
-        <p className="text-base md:text-lg leading-relaxed text-neutral-200">
-          På <span className="font-semibold text-white">BrandX</span> förenar vi design, innovation och precision
-          för att skapa visuella uttryck som väcker uppmärksamhet och bygger förtroende.
-          Från grafisk design och tryck till montering och helhetslösningar – vi hjälper företag att synas med stil
-          och kommunicera sitt varumärke på ett modernt och minnesvärt sätt.
-        </p>
-
-        <p className="mt-6 text-sm md:text-base text-neutral-300 leading-relaxed">
-          Vi tror på kraften i detaljer och på att varje projekt berättar en historia.
-          Vårt mål är att kombinera estetik med funktionalitet – där varje färg, form och yta bidrar till helheten.
-          Oavsett om det handlar om en fasadskylt, fordonsdekor eller en helt ny visuell profil,
-          levererar vi resultat som sticker ut och håller över tid.
-        </p>
-
-        <div className="mt-8 inline-flex items-center justify-center md:justify-start gap-3">
-          <span className="h-1 w-10 rounded-full bg-linear-to-r from-orange-400 to-pink-500" />
-          <span className="uppercase text-xs md:text-sm tracking-[0.2em] text-neutral-400">
-            Design · Tryck · Montering
-          </span>
-          <span className="h-1 w-10 rounded-full bg-linear-to-r from-pink-500 to-orange-400" />
-        </div>
-      </div>
+    {/* Bild till höger */}
+    <div className="flex justify-center md:justify-end">
+      <Image
+        src="/girl01.png"
+        alt="BrandX logotypmontering"
+        width={500}
+        height={500}
+        className="rounded-2xl  max-w-full md:max-w-[90%] lg:max-w-[80%]"
+        priority
+      />
     </div>
   </div>
 </section>
 
+
+
+
+    
+
+
+ <section className="relative bg-[#060010] py-24">
+    <div className="absolute inset-0 z-0">
+    <LiquidEther
+      colors={['#5227FF', '#FF9FFC', '#B19EEF']}
+      mouseForce={30}
+      cursorSize={100}
+      isViscous={false}
+      viscous={30}
+      iterationsViscous={32}
+      iterationsPoisson={32}
+      resolution={0.5}
+      isBounce={false}
+      autoDemo={true}
+      autoSpeed={0.5}
+      autoIntensity={2.2}
+      takeoverDuration={0.25}
+      autoResumeDelay={3000}
+      autoRampDuration={0.6}
+    />
+  </div>
+      {/* subtil bakgrundsglow */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-32 left-[-10%] h-80 w-80 rounded-full bg-orange-500/20 blur-3xl" />
+        <div className="absolute bottom-[-10%] right-[-10%] h-80 w-80 rounded-full bg-sky-500/20 blur-3xl" />
+      </div>
+
+      <div className="mx-auto max-w-6xl px-4">
+        {/* rubrik om du vill ha den */}
+        <div className="mb-10 text-center text-white">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+            Utvalda arbeten
+          </h2>
+          <p className="mt-3 text-sm md:text-base text-neutral-300">
+            Ett mixat galleri av projekt och kreativa lösningar från BrandX.
+          </p>
+        </div>
+
+        {/* GRID – 4 per rad på desktop */}
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+          {items.map((item) => (
+            <a
+              key={item.image}
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-neutral-900/80 shadow-[0_15px_35px_rgba(0,0,0,0.6)] transition-transform duration-300 hover:-translate-y-1"
+              style={{
+                backgroundImage: item.gradient,
+                borderColor: item.borderColor,
+              }}
+            >
+              <div className="relative aspect-square">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  sizes="(min-width:1024px) 220px,(min-width:768px) 200px, 160px"
+                />
+              </div>
+
+              <div className="relative px-3 pb-4 pt-3 bg-black/40 backdrop-blur-sm">
+                <p className="text-xs font-medium text-orange-300">
+                  {item.subtitle}
+                </p>
+                <h3 className="mt-1 text-sm font-semibold text-white">
+                  {item.title}
+                </h3>
+                <p className="text-[11px] text-neutral-300">{item.handle}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    
     <section
       id="services"
       className="relative isolate mx-auto my-[clamp(24px,6vw,48px)] h-[90vh] max-w-[1100px] overflow-hidden rounded-3xl border border-white/10 bg-neutral-950 px-[clamp(12px,2vw,20px)] py-10 shadow-2xl shadow-black/40"
@@ -385,63 +480,6 @@ export default function Home() {
           </div>
         </ScrollStackItem>
       </ScrollStack>
-    </section>
-
-    
-
-
- <section className="relative bg-[#060010] py-24">
-      {/* subtil bakgrundsglow */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-32 left-[-10%] h-80 w-80 rounded-full bg-orange-500/20 blur-3xl" />
-        <div className="absolute bottom-[-10%] right-[-10%] h-80 w-80 rounded-full bg-sky-500/20 blur-3xl" />
-      </div>
-
-      <div className="mx-auto max-w-6xl px-4">
-        {/* rubrik om du vill ha den */}
-        <div className="mb-10 text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
-            Utvalda arbeten
-          </h2>
-          <p className="mt-3 text-sm md:text-base text-neutral-300">
-            Ett mixat galleri av projekt och kreativa lösningar från BrandX.
-          </p>
-        </div>
-
-        {/* GRID – 4 per rad på desktop */}
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
-          {items.map((item) => (
-            <a
-              key={item.image}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-neutral-900/80 shadow-[0_15px_35px_rgba(0,0,0,0.6)] transition-transform duration-300 hover:-translate-y-1"
-              style={{
-                backgroundImage: item.gradient,
-                borderColor: item.borderColor,
-              }}
-            >
-              <div className="relative aspect-square">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(min-width:1024px) 220px,(min-width:768px) 200px, 160px"
-                />
-              </div>
-
-              <div className="relative px-3 pb-4 pt-3 bg-black/40 backdrop-blur-sm">
-                <p className="text-xs font-medium text-orange-300">
-                  {item.subtitle}
-                </p>
-                <h3 className="mt-1 text-sm font-semibold text-white">
-                  {item.title}
-                </h3>
-                <p className="text-[11px] text-neutral-300">{item.handle}</p>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
     </section>
        
 
