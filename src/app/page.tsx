@@ -77,7 +77,7 @@ export default function Home() {
 
   const items = [
   {
-    image: "/mix/01.JPG",
+    image: "/mix/01.jpg",
     title: "Case 01",
     subtitle: "BrandX Produktion",
     handle: "@brandx",
@@ -85,7 +85,7 @@ export default function Home() {
     gradient: "linear-gradient(145deg,#f97316,#000)",
   },
   {
-    image: "/mix/02.JPG",
+    image: "/mix/02.jpg",
     title: "Case 02",
     subtitle: "BrandX Produktion",
     handle: "@brandx",
@@ -93,7 +93,7 @@ export default function Home() {
     gradient: "linear-gradient(145deg,#fb7185,#000)",
   },
   {
-    image: "/mix/03.JPG",
+    image: "/mix/03.jpg",
     title: "Case 03",
     subtitle: "BrandX Produktion",
     handle: "@brandx",
@@ -109,7 +109,7 @@ export default function Home() {
     gradient: "linear-gradient(145deg,#38bdf8,#000)",
   },
   {
-    image: "/mix/05.JPG",
+    image: "/mix/05.jpg",
     title: "Case 05",
     subtitle: "BrandX Produktion",
     handle: "@brandx",

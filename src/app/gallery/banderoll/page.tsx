@@ -1,6 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
 export default function BanderollPage() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   // Om dina filer heter annorlunda, uppdatera listan nedan
   const images = [
     "/banderoll/banderoll-1.jpg",
@@ -34,11 +39,13 @@ export default function BanderollPage() {
         {/* Bildgalleri */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {images.map((src, index) => (
-            <div
+            <button
               key={src}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-neutral-900 transition-transform duration-300 hover:scale-[1.02]"
+              type="button"
+              onClick={() => setSelectedImage(src)}
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-neutral-900 text-left transition-transform duration-300 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/60"
             >
-              <div className="relative aspect-4/5">
+              <div className="relative aspect-[4/5]">
                 <Image
                   src={src}
                   alt={`Banderoll ${index + 1}`}
@@ -48,17 +55,49 @@ export default function BanderollPage() {
               </div>
 
               {/* Overlay */}
-              <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
               <div className="pointer-events-none absolute bottom-4 left-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <p className="text-sm font-medium text-white">
                   Banderoll {index + 1}
                 </p>
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </div>
+
+      {/* Lightbox / fullscreen-bild */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/80 px-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div
+            className="relative w-full max-w-5xl"
+            onClick={(e) => e.stopPropagation()} // så att inte klick på bilden stänger
+          >
+            {/* Stäng-knapp */}
+            <button
+              type="button"
+              onClick={() => setSelectedImage(null)}
+              className="absolute -top-10 right-0 rounded-full bg-white/10 px-3 py-1 text-sm text-white shadow-lg shadow-black/40 backdrop-blur hover:bg-white/20"
+            >
+              Stäng ✕
+            </button>
+
+            <div className="relative aspect-[16/10] md:aspect-[16/9] lg:aspect-[3/2] overflow-hidden rounded-2xl border border-white/10 bg-black">
+              <Image
+                src={selectedImage}
+                alt="Förstorad banderoll"
+                fill
+                className="object-contain"
+                sizes="100vw"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
