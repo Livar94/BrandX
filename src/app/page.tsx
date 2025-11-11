@@ -493,8 +493,9 @@ export default function Home() {
         </div>
       </div>
     </section>
+    {/* Ballpit-lager */}
          <section className="relative overflow-hidden bg-linear-to-b from-white to-neutral-50 min-h-[500px] max-h-[1000px] h-screen w-full">
-          {/* Ballpit-lager */}
+          
           <div className="absolute inset-0">
             <Ballpit
               count={200}
@@ -506,10 +507,10 @@ export default function Home() {
             />
           </div>
 
-          {/* Mjuk vignette för djup */}
+          
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0)_60%,rgba(0,0,0,0.08)_100%)]" />
 
-          {/* Text-overlay (valfritt) */}
+          
           <div className="relative z-10 flex h-full items-center justify-center">
             <div className="text-center px-6">
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-neutral-900">

@@ -90,7 +90,7 @@ export default function MenyerPage() {
               Stäng ✕
             </button>
 
-            <div className="relative aspect-[16/10] md:aspect-[16/9] lg:aspect-[3/2] overflow-hidden rounded-2xl border border-white/10 bg-black">
+            <div className="relative aspect-16/10 md:aspect-video lg:aspect-3/2 overflow-hidden rounded-2xl border border-white/10 bg-black">
               <Image
                 src={selectedImage}
                 alt="Förstorad meny"

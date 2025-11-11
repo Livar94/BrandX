@@ -37,7 +37,7 @@ export default function Header() {
     { href: "/gallery/flagga", label: "Flagga" },
     { href: "/gallery/fonsterdekor", label: "Fönsterdekor" },
     { href: "/gallery/gatupratare", label: "Gatupratare" },
-    { href: "/gallery/kladertryck", label: "Kladertryck" },
+    { href: "/gallery/kladertryck", label: "Klädertryck" },
     { href: "/gallery/Menyer", label: "Menyer" },
     { href: "/gallery/rollup", label: "Roll-up" },
     { href: "/gallery/skyltar", label: "Skyltar" },
@@ -59,10 +59,11 @@ export default function Header() {
   return (
     <header
       className={`
-        fixed inset-x-0 top-0 z-1000 h-28
+        fixed inset-x-0 top-0 z-[1000] h-28
         border-b border-white/10
-        bg-[rgba(9,11,17,0.55)] backdrop-blur-md
-        supports-backdrop-filter:bg-[rgba(9,11,17,0.35)]
+        bg-[#060010] md:bg-[rgba(9,11,17,0.55)]
+        backdrop-blur-md
+        supports-backdrop-filter:bg-[#060010] md:supports-backdrop-filter:bg-[rgba(9,11,17,0.35)]
         shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)]
         after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px
         after:bg-linear-to-r after:from-[#5227FF]/60 after:via-white/20 after:to-[#F01E9C]/60
@@ -89,9 +90,9 @@ export default function Header() {
           aria-controls="primary-navigation"
           className={`
             inline-flex h-[42px] w-[42px] flex-col items-center justify-center gap-[5px]
-            rounded-xl border border-white/10 bg-[#121622]/90
+            rounded-xl border border-white/10 bg-[#060010]
             ring-0 transition
-            hover:bg-[#121622]
+            hover:bg-[#060010]
             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5b8cff]/50
             md:hidden
           `}
@@ -118,15 +119,19 @@ export default function Header() {
           <ul
             id="primary-navigation"
             className={`
-              fixed left-0 right-0 bottom-0 top-28
+              fixed inset-0
               flex flex-col gap-1
               border-t border-white/10
-              bg-[#0b0d12]/95 backdrop-blur
-              p-4
+              bg-[#060010] backdrop-blur-lg
+              pt-28 p-4
               transition-all duration-200 ease-out
-              ${menuOpen ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"}
+              ${
+                menuOpen
+                  ? "pointer-events-auto translate-y-0 opacity-100"
+                  : "pointer-events-none -translate-y-2 opacity-0"
+              }
               md:static md:inset-auto md:flex md:translate-y-0 md:flex-row md:items-center md:gap-1
-              md:border-0 md:bg-transparent md:p-0 md:opacity-100 md:pointer-events-auto
+              md:border-0 md:bg-transparent md:p-0 md:pt-0 md:opacity-100 md:pointer-events-auto md:backdrop-blur-0
             `}
           >
             {/* Hem */}
@@ -152,14 +157,6 @@ export default function Header() {
                   `}
                 />
                 <span className={`relative bg-clip-text ${isHome ? "text-white" : ""}`}>Hem</span>
-                <span
-                  className={`
-                    pointer-events-none absolute left-3 right-3 -bottom-1 block h-0.5
-                    origin-left scale-x-0 opacity-0 transition
-                    bg-linear-to-r from-[#5227FF] via-[#B19EEF] to-[#F01E9C]
-                    ${isHome ? "scale-x-100 opacity-100" : "group-hover:scale-x-100 group-hover:opacity-100"}
-                  `}
-                />
               </Link>
             </li>
 
@@ -186,14 +183,6 @@ export default function Header() {
                   `}
                 />
                 <span className={`relative bg-clip-text ${isKundcase ? "text-white" : ""}`}>Kundcase</span>
-                <span
-                  className={`
-                    pointer-events-none absolute left-3 right-3 -bottom-1 block h-0.5
-                    origin-left scale-x-0 opacity-0 transition
-                    bg-linear-to-r from-[#5227FF] via-[#B19EEF] to-[#F01E9C]
-                    ${isKundcase ? "scale-x-100 opacity-100" : "group-hover:scale-x-100 group-hover:opacity-100"}
-                  `}
-                />
               </Link>
             </li>
 
@@ -220,14 +209,6 @@ export default function Header() {
                   `}
                 />
                 <span className={`relative bg-clip-text ${isServices ? "text-white" : ""}`}>Tjänster</span>
-                <span
-                  className={`
-                    pointer-events-none absolute left-3 right-3 -bottom-1 block h-0.5
-                    origin-left scale-x-0 opacity-0 transition
-                    bg-linear-to-r from-[#5227FF] via-[#B19EEF] to-[#F01E9C]
-                    ${isServices ? "scale-x-100 opacity-100" : "group-hover:scale-x-100 group-hover:opacity-100"}
-                  `}
-                />
               </Link>
             </li>
 
@@ -267,14 +248,14 @@ export default function Header() {
               </button>
 
               <ul
-                  className={`
-                    absolute left-0 top-full mt-2 w-56 rounded-2xl border border-white/10
-                    bg-[#0b0d12]/95 p-2 text-[0.9rem] text-[#e9edf4]/90 shadow-xl
-                    opacity-0 translate-y-1
-                    transition duration-150 ease-out
-                    group-hover:opacity-100 group-hover:translate-y-0
-                    z-20
-                  `}
+                className={`
+                  absolute left-0 top-full mt-2 w-56 rounded-2xl border border-white/10
+                  bg-[#0b0d12]/95 p-2 text-[0.9rem] text-[#e9edf4]/90 shadow-xl
+                  opacity-0 translate-y-1
+                  transition duration-150 ease-out
+                  group-hover:opacity-100 group-hover:translate-y-0
+                  z-20
+                `}
               >
                 {galleryItems.map(item => {
                   const activeChild = pathname?.startsWith(item.href);
@@ -384,14 +365,6 @@ export default function Header() {
                 <span className={`relative bg-clip-text ${isContact ? "text-white" : ""}`}>
                   Kontakta Oss
                 </span>
-                <span
-                  className={`
-                    pointer-events-none absolute left-3 right-3 -bottom-1 block h-0.5
-                    origin-left scale-x-0 opacity-0 transition
-                    bg-linear-to-r from-[#5227FF] via-[#B19EEF] to-[#F01E9C]
-                    ${isContact ? "scale-x-100 opacity-100" : "group-hover:scale-x-100 group-hover:opacity-100"}
-                  `}
-                />
               </Link>
             </li>
           </ul>
