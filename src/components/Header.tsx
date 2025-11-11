@@ -38,7 +38,6 @@ export default function Header() {
     { href: "/gallery/fonsterdekor", label: "Fönsterdekor" },
     { href: "/gallery/gatupratare", label: "Gatupratare" },
     { href: "/gallery/kladertryck", label: "Kladertryck" },
-    { href: "/gallery/logos", label: "Logos" },
     { href: "/gallery/Menyer", label: "Menyer" },
     { href: "/gallery/rollup", label: "Roll-up" },
     { href: "/gallery/skyltar", label: "Skyltar" },
@@ -60,13 +59,13 @@ export default function Header() {
   return (
     <header
       className={`
-        fixed inset-x-0 top-0 z-[1000] h-28
+        fixed inset-x-0 top-0 z-1000 h-28
         border-b border-white/10
         bg-[rgba(9,11,17,0.55)] backdrop-blur-md
-        supports-[backdrop-filter]:bg-[rgba(9,11,17,0.35)]
+        supports-backdrop-filter:bg-[rgba(9,11,17,0.35)]
         shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)]
         after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px
-        after:bg-gradient-to-r after:from-[#5227FF]/60 after:via-white/20 after:to-[#F01E9C]/60
+        after:bg-linear-to-r after:from-[#5227FF]/60 after:via-white/20 after:to-[#F01E9C]/60
       `}
     >
       <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between gap-4 px-[clamp(12px,2.4vw,24px)]">
@@ -155,9 +154,9 @@ export default function Header() {
                 <span className={`relative bg-clip-text ${isHome ? "text-white" : ""}`}>Hem</span>
                 <span
                   className={`
-                    pointer-events-none absolute left-3 right-3 -bottom-1 block h-[2px]
+                    pointer-events-none absolute left-3 right-3 -bottom-1 block h-0.5
                     origin-left scale-x-0 opacity-0 transition
-                    bg-gradient-to-r from-[#5227FF] via-[#B19EEF] to-[#F01E9C]
+                    bg-linear-to-r from-[#5227FF] via-[#B19EEF] to-[#F01E9C]
                     ${isHome ? "scale-x-100 opacity-100" : "group-hover:scale-x-100 group-hover:opacity-100"}
                   `}
                 />
@@ -189,9 +188,9 @@ export default function Header() {
                 <span className={`relative bg-clip-text ${isKundcase ? "text-white" : ""}`}>Kundcase</span>
                 <span
                   className={`
-                    pointer-events-none absolute left-3 right-3 -bottom-1 block h-[2px]
+                    pointer-events-none absolute left-3 right-3 -bottom-1 block h-0.5
                     origin-left scale-x-0 opacity-0 transition
-                    bg-gradient-to-r from-[#5227FF] via-[#B19EEF] to-[#F01E9C]
+                    bg-linear-to-r from-[#5227FF] via-[#B19EEF] to-[#F01E9C]
                     ${isKundcase ? "scale-x-100 opacity-100" : "group-hover:scale-x-100 group-hover:opacity-100"}
                   `}
                 />
@@ -223,9 +222,9 @@ export default function Header() {
                 <span className={`relative bg-clip-text ${isServices ? "text-white" : ""}`}>Tjänster</span>
                 <span
                   className={`
-                    pointer-events-none absolute left-3 right-3 -bottom-1 block h-[2px]
+                    pointer-events-none absolute left-3 right-3 -bottom-1 block h-0.5
                     origin-left scale-x-0 opacity-0 transition
-                    bg-gradient-to-r from-[#5227FF] via-[#B19EEF] to-[#F01E9C]
+                    bg-linear-to-r from-[#5227FF] via-[#B19EEF] to-[#F01E9C]
                     ${isServices ? "scale-x-100 opacity-100" : "group-hover:scale-x-100 group-hover:opacity-100"}
                   `}
                 />
@@ -387,9 +386,9 @@ export default function Header() {
                 </span>
                 <span
                   className={`
-                    pointer-events-none absolute left-3 right-3 -bottom-1 block h-[2px]
+                    pointer-events-none absolute left-3 right-3 -bottom-1 block h-0.5
                     origin-left scale-x-0 opacity-0 transition
-                    bg-gradient-to-r from-[#5227FF] via-[#B19EEF] to-[#F01E9C]
+                    bg-linear-to-r from-[#5227FF] via-[#B19EEF] to-[#F01E9C]
                     ${isContact ? "scale-x-100 opacity-100" : "group-hover:scale-x-100 group-hover:opacity-100"}
                   `}
                 />

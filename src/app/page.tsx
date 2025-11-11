@@ -673,7 +673,7 @@ export default function Home() {
                 href={mapsLink}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-xl border border-orange-300/60 bg-gradient-to-r from-[#f97316] to-orange-400 px-4 py-2.5 text-sm font-medium text-white shadow hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/50"
+                className="inline-flex items-center justify-center rounded-xl border border-orange-300/60 bg-linear-to-r from-[#f97316] to-orange-400 px-4 py-2.5 text-sm font-medium text-white shadow hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/50"
               >
                 Öppna i Google Maps
               </a>

@@ -39,7 +39,7 @@ export default function Footer() {
       </div>
 
       {/* Innehåll */}
-      <div className="relative z-10 mx-auto grid w-full max-w-[1200px] gap-8 [grid-template-columns:repeat(auto-fit,minmax(220px,1fr))] text-center md:text-left">
+      <div className="relative z-10 mx-auto grid w-full max-w-[1200px] gap-8 grid-cols-[repeat(auto-fit,minmax(220px,1fr))] text-center md:text-left">
         {/* Logo & tagline */}
         <div className="flex flex-col gap-2">
           <Link href="/" className="text-[#5b8cff] no-underline font-bold text-[1.2rem]">

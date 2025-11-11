@@ -45,7 +45,7 @@ export default function BanderollPage() {
               onClick={() => setSelectedImage(src)}
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-neutral-900 text-left transition-transform duration-300 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/60"
             >
-              <div className="relative aspect-[4/5]">
+              <div className="relative aspect-4/5">
                 <Image
                   src={src}
                   alt={`Banderoll ${index + 1}`}
@@ -55,7 +55,7 @@ export default function BanderollPage() {
               </div>
 
               {/* Overlay */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
               <div className="pointer-events-none absolute bottom-4 left-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <p className="text-sm font-medium text-white">
@@ -70,7 +70,7 @@ export default function BanderollPage() {
       {/* Lightbox / fullscreen-bild */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/80 px-4"
+          className="fixed inset-0 z-2000 flex items-center justify-center bg-black/80 px-4"
           onClick={() => setSelectedImage(null)}
         >
           <div
@@ -86,7 +86,7 @@ export default function BanderollPage() {
               Stäng ✕
             </button>
 
-            <div className="relative aspect-[16/10] md:aspect-[16/9] lg:aspect-[3/2] overflow-hidden rounded-2xl border border-white/10 bg-black">
+            <div className="relative aspect-16/10 md:aspect-video lg:aspect-3/2 overflow-hidden rounded-2xl border border-white/10 bg-black">
               <Image
                 src={selectedImage}
                 alt="Förstorad banderoll"
