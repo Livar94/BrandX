@@ -5,7 +5,7 @@ import LiquidEther from "../components/LiquidEther";
 import dynamic from "next/dynamic";
 import ScrollStack, { ScrollStackItem } from '../components/ScrollStack'
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import Ballpit from "../components/Ballpit";
 import Link from "next/link";
 
@@ -19,16 +19,54 @@ export default function Home() {
   ssr: false,
 });
 
-  const prefersReduced = useReducedMotion();
+    const prefersReduced = useReducedMotion();
 
-  const container = {
+  // gemensam easing-kurva (mjuk ease-out)
+  const easeCurve: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
+  const container: Variants = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } },
+    show: {
+      transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+    },
   };
 
-  const fadeLeft  = { hidden: { opacity: 0, x: prefersReduced ? 0 : -40 }, show: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } } };
-  const fadeUp    = { hidden: { opacity: 0, y: prefersReduced ? 0 : -40 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } } };
-  const fadeRight = { hidden: { opacity: 0, x: prefersReduced ? 0 :  40 }, show: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } } };
+  const fadeLeft: Variants = {
+    hidden: { opacity: 0, x: prefersReduced ? 0 : -40 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.7,
+        ease: easeCurve,
+      },
+    },
+  };
+
+  const fadeUp: Variants = {
+    hidden: { opacity: 0, y: prefersReduced ? 0 : -40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+        ease: easeCurve,
+      },
+    },
+  };
+
+  const fadeRight: Variants = {
+    hidden: { opacity: 0, x: prefersReduced ? 0 : 40 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.7,
+        ease: easeCurve,
+      },
+    },
+  };
+
 
 
   const addressText = "Gråsparvsvägen 26B\n724 70 Västerås";
