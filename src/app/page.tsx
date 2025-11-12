@@ -3,11 +3,18 @@
 
 import LiquidEther from "../components/LiquidEther"; 
 import dynamic from "next/dynamic";
-import ScrollStack, { ScrollStackItem } from '../components/ScrollStack'
+// import ScrollStack, { ScrollStackItem } from '../components/ScrollStack'
 import Image from "next/image";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import Ballpit from "../components/Ballpit";
-import Link from "next/link";
+// import Ballpit from "../components/Ballpit";
+// import Link from "next/link";
+import Roadmap from "../components/Roadmap";
+import WelcomePage from "../components/WelcomePage"
+
+
+
+
+
 
 
 
@@ -161,6 +168,12 @@ export default function Home() {
 
   return (
     <>
+
+     <section>
+        <WelcomePage />
+     </section>
+ 
+    
 <section className="relative w-full h-screen overflow-hidden bg-[#060010]">
   {/* --- Bakgrundseffekt --- */}
   <div className="absolute inset-0 z-0">
@@ -202,15 +215,15 @@ export default function Home() {
       <TextTypeClient
         className="inline-block align-top"
         text={[
-          'Välkommen till BrandX',
-          'där idéer blir upplevelser och detaljer gör skillnad',
+          'BrandX',
+          'Idéer blir upplevelser och detaljer gör skillnad',
           'Grafisk design, Trycktjänster, Grafisk installation',
         ]}
         typingSpeed={150}
         pauseDuration={1500}
         showCursor
         cursorCharacter="|"
-        textColors={['white', 'white', 'white']}
+        textColors={['#f97316', 'white', 'white']}
       />
     </h1>
   </div>
@@ -218,56 +231,9 @@ export default function Home() {
 
       </section>
 
-<section className="relative py-24 bg-gradient-to-br from-white via-gray-50 to-gray-100 overflow-hidden">
-  {/* Dekorativ bakgrundsglow */}
-  <div className="absolute inset-0 -z-10">
-    <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-orange-400/10 rounded-full blur-3xl" />
-    <div className="absolute bottom-[-120px] right-[-120px] w-[500px] h-[500px] bg-pink-400/10 rounded-full blur-3xl" />
-  </div>
+     
 
-  {/* Innehållsgrid */}
-  <div className="relative mx-auto max-w-6xl px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
-    {/* Text till vänster */}
-    <div className="text-center md:text-left text-gray-800">
-      <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8 leading-tight">
-        Kreativitet som syns – <span className="text-orange-500">BrandX</span>
-      </h2>
 
-      <p className="text-lg md:text-xl leading-relaxed text-gray-700">
-        På <span className="font-semibold text-black">BrandX</span> förenar vi design, innovation och precision för att
-        skapa visuella uttryck som väcker uppmärksamhet och bygger förtroende. Från grafisk design och tryck till
-        montering och helhetslösningar – vi hjälper företag att synas med stil och kommunicera sitt varumärke på ett
-        modernt och minnesvärt sätt.
-      </p>
-
-      <p className="mt-6 text-base md:text-lg text-gray-600 leading-relaxed">
-        Vi tror på kraften i detaljer och på att varje projekt berättar en historia. Vårt mål är att kombinera estetik
-        med funktionalitet – där varje färg, form och yta bidrar till helheten. Oavsett om det handlar om en fasadskylt,
-        fordonsdekor eller en helt ny visuell profil, levererar vi resultat som sticker ut och håller över tid.
-      </p>
-
-      <div className="mt-10 flex items-center justify-center md:justify-start gap-4">
-        <span className="h-1 w-10 rounded-full bg-linear-to-r from-orange-400 to-pink-500" />
-        <span className="uppercase text-xs md:text-sm tracking-[0.25em] text-gray-500 font-medium">
-          Design · Tryck · Montering
-        </span>
-        <span className="h-1 w-10 rounded-full bg-linear-to-r from-pink-500 to-orange-400" />
-      </div>
-    </div>
-
-    {/* Bild till höger */}
-    <div className="flex justify-center md:justify-end">
-      <Image
-        src="/girl01.png"
-        alt="BrandX logotypmontering"
-        width={500}
-        height={500}
-        className="rounded-2xl  max-w-full md:max-w-[90%] lg:max-w-[80%]"
-        priority
-      />
-    </div>
-  </div>
-</section>
 
 
 
@@ -349,12 +315,64 @@ export default function Home() {
     </section>
 
 
+    <section className="relative py-24 bg-linear-to-br from-white via-gray-50 to-gray-100 overflow-hidden">
+  {/* Dekorativ bakgrundsglow */}
+  <div className="absolute inset-0 -z-10">
+    <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-orange-400/10 rounded-full blur-3xl" />
+    <div className="absolute bottom-[-120px] right-[-120px] w-[500px] h-[500px] bg-pink-400/10 rounded-full blur-3xl" />
+  </div>
+
+  {/* Innehållsgrid */}
+  <div className="relative mx-auto max-w-6xl px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+    {/* Text till vänster */}
+    <div className="text-center md:text-left text-gray-800">
+      <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8 leading-tight">
+        Kreativitet som syns – <span className="text-orange-500">BrandX</span>
+      </h2>
+
+      <p className="text-lg md:text-xl leading-relaxed text-gray-700">
+        På <span className="font-semibold text-black">BrandX</span> förenar vi design, innovation och precision för att
+        skapa visuella uttryck som väcker uppmärksamhet och bygger förtroende. Från grafisk design och tryck till
+        montering och helhetslösningar – vi hjälper företag att synas med stil och kommunicera sitt varumärke på ett
+        modernt och minnesvärt sätt.
+      </p>
+
+      <p className="mt-6 text-base md:text-lg text-gray-600 leading-relaxed">
+        Vi tror på kraften i detaljer och på att varje projekt berättar en historia. Vårt mål är att kombinera estetik
+        med funktionalitet – där varje färg, form och yta bidrar till helheten. Oavsett om det handlar om en fasadskylt,
+        fordonsdekor eller en helt ny visuell profil, levererar vi resultat som sticker ut och håller över tid.
+      </p>
+
+      <div className="mt-10 flex items-center justify-center md:justify-start gap-4">
+        <span className="h-1 w-10 rounded-full bg-linear-to-r from-orange-400 to-pink-500" />
+        <span className="uppercase text-xs md:text-sm tracking-[0.25em] text-gray-500 font-medium">
+          Design · Tryck · Montering
+        </span>
+        <span className="h-1 w-10 rounded-full bg-linear-to-r from-pink-500 to-orange-400" />
+      </div>
+    </div>
+
+    {/* Bild till höger */}
+    <div className="flex justify-center md:justify-end">
+      <Image
+        src="/girl01.png"
+        alt="BrandX logotypmontering"
+        width={500}
+        height={500}
+        className="rounded-2xl  max-w-full md:max-w-[90%] lg:max-w-[80%]"
+        priority
+      />
+    </div>
+  </div>
+</section>
+
+
     
-    <section
+    {/* <section
       id="services"
       className="relative isolate mx-auto my-[clamp(24px,6vw,48px)] h-[90vh] max-w-[1100px] overflow-hidden rounded-3xl border border-white/10 bg-neutral-950 px-[clamp(12px,2vw,20px)] py-10 shadow-2xl shadow-black/40"
     >
-      {/* Subtil bakgrundsglow */}
+    
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-[#5227FF]/25 blur-3xl" />
         <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-[#F01E9C]/20 blur-3xl" />
@@ -381,7 +399,7 @@ export default function Home() {
         scaleEndPosition="10%"
         className="h-full px-1 sm:px-3"
       >
-        {/* 1 – Trycktjänster */}
+
         <ScrollStackItem className="relative rounded-2xl border border-white/15 p-8 md:p-10 text-white shadow-xl shadow-black/40 backdrop-blur-sm [background:linear-gradient(135deg,#5227FF_0%,#3b1ee8_100%)]">
           <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-white/80">
             Print & profil
@@ -396,7 +414,7 @@ export default function Home() {
           </p>
         </ScrollStackItem>
 
-        {/* 2 – Grafisk installation */}
+    
         <ScrollStackItem className="relative rounded-2xl border border-white/15 p-8 md:p-10 text-white shadow-xl shadow-black/40 backdrop-blur-sm [background:linear-gradient(135deg,#F01E9C_0%,#a90de2_100%)]">
           <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-white/80">
             På plats
@@ -411,7 +429,7 @@ export default function Home() {
           </p>
         </ScrollStackItem>
 
-        {/* 3 – Grafisk design */}
+     
         <ScrollStackItem className="relative rounded-2xl border border-white/15 p-8 md:p-10 text-white shadow-xl shadow-black/40 backdrop-blur-sm [background:linear-gradient(135deg,#5227FF_0%,#3b1ee8_100%)]">
           <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-white/80">
             Identitet & koncept
@@ -426,7 +444,7 @@ export default function Home() {
           </p>
         </ScrollStackItem>
 
-        {/* 4 – Webbplatser & e-handel */}
+   
         <ScrollStackItem className="relative rounded-2xl border border-white/15 p-8 md:p-10 text-white shadow-xl shadow-black/40 backdrop-blur-sm [background:linear-gradient(135deg,#F01E9C_0%,#a90de2_100%)]">
           <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-white/80">
             Digital närvaro
@@ -441,7 +459,6 @@ export default function Home() {
           </p>
         </ScrollStackItem>
 
-        {/* 5 – App- & systemutveckling */}
         <ScrollStackItem className="relative rounded-2xl border border-white/15 p-8 md:p-10 text-white shadow-xl shadow-black/40 backdrop-blur-sm [background:linear-gradient(135deg,#5227FF_0%,#3b1ee8_100%)]">
           <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-white/80">
             Mjukvara
@@ -456,7 +473,7 @@ export default function Home() {
           </p>
         </ScrollStackItem>
 
-        {/* 6 – Digitala lösningar & integrationer */}
+       
         <ScrollStackItem className="relative rounded-2xl border border-white/15 p-8 md:p-10 text-white shadow-xl shadow-black/40 backdrop-blur-sm [background:linear-gradient(135deg,#F01E9C_0%,#a90de2_100%)]">
           <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-white/80">
             Integration & automation
@@ -480,7 +497,16 @@ export default function Home() {
           </div>
         </ScrollStackItem>
       </ScrollStack>
+    </section> */}
+
+    <section>
+      <Roadmap />
     </section>
+
+    
+
+
+
        
 
 
@@ -532,7 +558,7 @@ export default function Home() {
       </div>
     </section>
     {/* Ballpit-lager */}
-         <section className="relative overflow-hidden bg-linear-to-b from-white to-neutral-50 min-h-[500px] max-h-[1000px] h-screen w-full">
+         {/* <section className="relative overflow-hidden bg-linear-to-b from-white to-neutral-50 min-h-[500px] max-h-[1000px] h-screen w-full">
           
           <div className="absolute inset-0">
             <Ballpit
@@ -559,7 +585,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </section>
+        </section> */}
 
            <section className="relative bg-neutral-950 py-24">
               {/* Subtil bakgrundsglow */}
