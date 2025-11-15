@@ -32,6 +32,7 @@ export default function Header() {
   const isHome = pathname === "/";
   const isServices = pathname?.startsWith("/services");
   const isContact = pathname?.startsWith("/contact");
+  const isAboute = pathname?.startsWith("/omoss");
 
   const baseItemClasses = `
     group relative block rounded-lg px-5 py-3 text-lg font-semibold no-underline
@@ -40,7 +41,7 @@ export default function Header() {
   `;
 
   return (
-    <header className="relative inset-x-0 top-0 py-4">
+    <header className="relative inset-x-0 top-0 z-1000 py-4">
       <div className="mx-auto flex h-full max-w-[1300px] items-center justify-between gap-6 px-[clamp(12px,2.4vw,24px)]">
         {/* Logo – större */}
         <Link href="/" aria-label="Brand-X – hem" className="inline-flex h-full items-center pl-1">
@@ -56,11 +57,15 @@ export default function Header() {
 
         {/* Hamburger (mobil) */}
         <button
-          onClick={() => setMenuOpen((o) => !o)}
+          onClick={() => setMenuOpen(o => !o)}
           aria-label={menuOpen ? "Stäng meny" : "Öppna meny"}
           aria-expanded={menuOpen}
           aria-controls="primary-navigation"
-          className="inline-flex h-[46px] w-[46px] flex-col items-center justify-center gap-1.5 rounded-lg bg-transparent md:hidden"
+          className="
+            relative z-1100
+            inline-flex h-[46px] w-[46px] flex-col items-center justify-center gap-1.5
+            rounded-lg bg-transparent md:hidden
+          "
         >
           <span
             className={`block h-0.5 w-6 rounded bg-black transition-transform duration-200 ${
@@ -84,7 +89,8 @@ export default function Header() {
           <ul
             id="primary-navigation"
             className={`
-              fixed inset-0 flex flex-col items-center justify-center gap-4
+              fixed inset-0 z-1050
+              flex flex-col items-center justify-center gap-4
               bg-white
               transition-all duration-200 ease-out
               ${
@@ -92,7 +98,8 @@ export default function Header() {
                   ? "pointer-events-auto translate-y-0 opacity-100"
                   : "pointer-events-none -translate-y-2 opacity-0"
               }
-              md:static md:flex md:flex-row md:items-center md:gap-2 md:bg-transparent md:opacity-100 md:pointer-events-auto
+              md:static md:z-auto md:flex md:flex-row md:items-center md:gap-2
+              md:bg-transparent md:opacity-100 md:pointer-events-auto
             `}
           >
             {/* Hem */}
@@ -156,6 +163,22 @@ export default function Header() {
                 }`}
               >
                 Kontakta Oss
+              </Link>
+            </li>
+
+            {/* Om oss */}
+            <li>
+              <Link
+                href="/omoss"
+                prefetch
+                onClick={() => setMenuOpen(false)}
+                className={`${baseItemClasses} ${
+                  isAboute
+                    ? "bg-[#f97316] text-white shadow-[0_0_20px_rgba(255,255,255,0.7)]"
+                    : "text-black hover:bg-[#f97316] hover:text-white hover:shadow-[0_0_20px_rgba(255,255,255,0.8)]"
+                }`}
+              >
+                Om Oss
               </Link>
             </li>
           </ul>
